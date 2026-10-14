@@ -11,6 +11,7 @@ import "./heritage.css";
 import "./campaign.css";
 import "./brand.css";
 import "./motion.css";
+import "./contact.css";
 
 const publicUrl = getSiteUrl();
 

@@ -1,0 +1,34 @@
+.preview-notice a {
+  color: var(--maroon);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-copy .contact-address { margin-top: 26px; }
+.contact-detail a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact-detail address {
+  margin-top: 12px;
+  color: var(--maroon);
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.2vw, 32px);
+  font-style: normal;
+  line-height: 1.25;
+}
+.contact-detail address span,
+.footer-note address span { display: block; }
+
+.footer-note > a {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #fff0d8;
+  font-size: 18px;
+  font-weight: 600;
+}
+.footer-note > a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer-note address {
+  color: #c6b3a4;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 1.7;
+}

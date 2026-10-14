@@ -39,7 +39,7 @@ export function Header() {
           {NAVIGATION.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href || (item.href === "/shop" && pathname.startsWith("/product")) ? "active" : ""}>{item.label}</Link>)}
         </nav>
         <div className="header-actions">
-          <button className="icon-button cart-trigger" onClick={open} aria-label={`Open preview cart, ${count} items`}>
+          <button className="icon-button cart-trigger" onClick={open} aria-label={`Open enquiry list, ${count} items`}>
             <BagIcon />{count > 0 && <span className="cart-count">{count}</span>}
           </button>
           <button className="menu-trigger" onClick={() => setMenuOpen(true)} aria-label="Open menu" aria-expanded={menuOpen} aria-controls="mobile-menu">

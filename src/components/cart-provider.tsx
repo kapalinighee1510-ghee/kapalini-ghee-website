@@ -7,7 +7,6 @@ type CartLine = { variantId: string; quantity: number };
 type CartContextValue = {
   lines: CartLine[];
   count: number;
-  subtotalInPaise: number;
   isOpen: boolean;
   open: () => void;
   close: () => void;
@@ -16,7 +15,7 @@ type CartContextValue = {
   remove: (variantId: string) => void;
 };
 
-const STORAGE_KEY = "kapalini-preview-cart-v1";
+const STORAGE_KEY = "kapalini-enquiry-list-v2";
 const CartContext = createContext<CartContextValue | null>(null);
 
 function validateStoredLines(value: unknown): CartLine[] {
@@ -55,7 +54,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
     } catch {
-      // The preview cart still works for this session when storage is unavailable.
+      // The enquiry list still works for this session when storage is unavailable.
     }
   }, [lines, hydrated]);
 
@@ -84,16 +83,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const close = useCallback(() => setOpen(false), []);
 
   const count = lines.reduce((total, line) => total + line.quantity, 0);
-  const subtotalInPaise = lines.reduce((total, line) => {
-    const variant = PRODUCT.variants.find((item) => item.id === line.variantId);
-    return total + (variant?.priceInPaise ?? 0) * line.quantity;
-  }, 0);
-
   const value = useMemo(() => ({
-    lines, count, subtotalInPaise, isOpen,
+    lines, count, isOpen,
     open, close,
     add, update, remove,
-  }), [lines, count, subtotalInPaise, isOpen, open, close, add, update, remove]);
+  }), [lines, count, isOpen, open, close, add, update, remove]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
@@ -102,8 +96,4 @@ export function useCart() {
   const context = useContext(CartContext);
   if (!context) throw new Error("useCart must be used inside CartProvider");
   return context;
-}
-
-export function formatRupees(paise: number) {
-  return new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(paise / 100);
 }

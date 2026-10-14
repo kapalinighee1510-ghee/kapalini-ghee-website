@@ -5,6 +5,11 @@ export const SITE = {
   description:
     "Kapalini Shudh Desi Ghee, presented for the moments and meals that feel like home.",
   productPath: "/product/kapalini-shudh-desi-ghee",
+  contact: {
+    phone: "92204 28942",
+    phoneHref: "tel:+919220428942",
+    addressLines: ["I-1-11A", "Sohn Rewari Road", "Dharuhera, Rewari, Haryana"],
+  },
 } as const;
 
 export const NAVIGATION = [
@@ -48,8 +53,7 @@ export type Product = {
   category: string;
   description: string;
   images: ProductImage[];
-  variants: ReadonlyArray<{ id: string; label: string; priceInPaise: number }>;
-  pricingIsDemo: boolean;
+  variants: ReadonlyArray<{ id: string; label: string }>;
 };
 
 export const PRODUCT: Product = {
@@ -83,12 +87,10 @@ export const PRODUCT: Product = {
     CAMPAIGN_IMAGES.goldenTable,
     CAMPAIGN_IMAGES.heldPack,
   ],
-  // Preview figures only. Replace with approved pack sizes and MRP before taking orders.
   variants: [
-    { id: "preview-500", label: "500 ml", priceInPaise: 49900 },
-    { id: "preview-1000", label: "1 L", priceInPaise: 89900 },
+    { id: "box-450", label: "450 ml box" },
+    { id: "box-900", label: "900 ml box" },
   ],
-  pricingIsDemo: true,
 };
 
 export const FAQS = [
@@ -105,7 +107,7 @@ export const FAQS = [
   {
     question: "Which pack sizes are available?",
     answer:
-      "The sizes shown here are demo placeholders for the client preview. Confirm actual available packs with the brand before ordering.",
+      "Kapalini Shudh Desi Ghee is available in 450 ml and 900 ml boxes. Contact us to ask about ordering.",
   },
   {
     question: "How should I store it?",
@@ -115,12 +117,6 @@ export const FAQS = [
   {
     question: "How can I place an order?",
     answer:
-      "The cart is available to preview the shopping experience. Checkout is not active until product details and an order integration are confirmed.",
+      "Choose a box and call us on 92204 28942 to ask about ordering. Online checkout is not active yet.",
   },
 ];
-
-export function getWhatsAppUrl() {
-  const number = process.env.NEXT_PUBLIC_BUSINESS_WHATSAPP?.replace(/[^\d]/g, "");
-  if (!number || number.length < 8 || number.length > 15) return null;
-  return `https://wa.me/${number}?text=${encodeURIComponent("Hello Kapalini, I would like to know more about Shudh Desi Ghee.")}`;
-}

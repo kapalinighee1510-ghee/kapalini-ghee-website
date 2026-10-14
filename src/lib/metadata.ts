@@ -10,7 +10,7 @@ export function getSiteUrl() {
 export function pageMetadata(title: string, description: string, path: string): Metadata {
   const publicUrl = getSiteUrl();
   return {
-    title: `${title} | ${SITE.name}`,
+    title,
     description,
     ...(publicUrl ? { alternates: { canonical: `${publicUrl}${path}` } } : {}),
     openGraph: {

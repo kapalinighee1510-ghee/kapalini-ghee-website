@@ -22,12 +22,18 @@ Netlify can import this repository directly. `netlify.toml` uses `npm run build`
 
 The contact form is prepared for Netlify Forms. After the first Netlify deploy, enable or verify form detection and submit a test enquiry. Delivery has not been verified in a deployed environment.
 
-## Replace before accepting real orders
+## Product and contact details
 
-- Edit `src/data/site.ts` for approved pack sizes, prices, product description, and FAQs. Set `pricingIsDemo` to `false` once values are verified and remove preview wording from the UI.
-- Add verified business contact details to `src/app/contact/page.tsx` and the footer.
+- Available packs: 450 ml and 900 ml boxes.
+- Phone: 92204 28942.
+- Address shown on the supplied document: I-1-11A, Sohn Rewari Road, Dharuhera, Rewari, Haryana. Confirm the printed road spelling and full postal address with the client before using it for shipping or legal documents.
+- No amount is displayed or calculated. The selection list is for enquiries; online checkout is inactive.
+
+## Before accepting online orders
+
+- Review `src/data/site.ts` if the approved pack sizes, contact details, product description, or FAQs change.
 - Add the approved domain in Netlify's environment settings as `NEXT_PUBLIC_SITE_URL`.
-- Connect and test a payment/order provider before enabling checkout. The current cart is a local preview with no payment processing.
+- Connect and test a payment/order provider before enabling checkout. The current enquiry list is local to the browser and has no payment processing.
 - Review packaging claims, legal details, delivery and returns policies with the client before a public commerce launch.
 
 ## Assets
