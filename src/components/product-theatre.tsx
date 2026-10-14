@@ -4,12 +4,12 @@ import { SectionHeritage } from "@/components/heritage-ornament";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { PRODUCT } from "@/data/site";
+import { CAMPAIGN_IMAGES } from "@/data/site";
 
 const scenes = [
-  { number: "01", eyebrow: "Meet Kapalini", title: "The golden centre of the table.", text: "A familiar sight, ready to become part of the meals you make your own.", image: PRODUCT.images[0] },
-  { number: "02", eyebrow: "The serving", title: "A little pour. A lovely moment.", text: "That finishing spoonful belongs on warm rotis, comforting dal, and so much more.", image: PRODUCT.images[1] },
-  { number: "03", eyebrow: "The presentation", title: "Thoughtful, from pack to plate.", text: "Explore the branded carton and sealed inner pouch shown in the supplied packaging photograph.", image: PRODUCT.images[2] },
+  { number: "01", eyebrow: "Meet Kapalini", title: "The golden centre of the table.", text: "A familiar sight, ready to become part of the meals you make your own.", image: CAMPAIGN_IMAGES.goldenTable },
+  { number: "02", eyebrow: "The serving", title: "A little pour. A lovely moment.", text: "That finishing spoonful belongs on warm rotis, comforting dal, and so much more.", image: CAMPAIGN_IMAGES.rotiPour },
+  { number: "03", eyebrow: "The presentation", title: "Thoughtful, from pack to plate.", text: "Explore the branded carton and sealed inner pouch shown in the supplied packaging photograph.", image: CAMPAIGN_IMAGES.openPack },
 ];
 
 export function ProductTheatre() {

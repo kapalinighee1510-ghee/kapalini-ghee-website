@@ -23,6 +23,25 @@ export type ProductImage = {
   height: number;
 };
 
+const campaignImage = (file: string, alt: string, label: string): ProductImage => ({
+  src: `/images/kapalini/campaign/${file}.jpg`,
+  alt,
+  label,
+  width: 1448,
+  height: 1086,
+});
+
+export const CAMPAIGN_IMAGES = {
+  goldenTable: campaignImage("golden-table", "Kapalini ghee carton beside a brass bowl, spoon and fresh rotis", "Golden table"),
+  rotiPour: campaignImage("roti-pour", "Ghee being poured onto warm rotis beside the Kapalini carton", "Warm rotis"),
+  openPack: campaignImage("open-pack", "Open Kapalini carton showing the inner pouch beside a bowl of ghee", "Inside the pack"),
+  ceremonialTable: campaignImage("ceremonial-table", "Kapalini carton and brass ghee bowl arranged with flowers and a red cloth", "A golden welcome"),
+  heldPack: campaignImage("held-pack", "A hand holding the Kapalini carton beside rotis and a brass bowl", "At your table"),
+  welcomeTray: campaignImage("welcome-tray", "Kapalini carton and bowl of ghee presented on a brass tray", "Made for sharing"),
+  familyRoti: campaignImage("family-roti", "A hand serving fresh roti with Kapalini ghee at the table", "Shared moments"),
+  servingRoti: campaignImage("serving-roti", "A spoon adding ghee to fresh rotis beside the Kapalini carton", "The finishing touch"),
+} as const;
+
 export type Product = {
   slug: string;
   name: string;
@@ -61,6 +80,8 @@ export const PRODUCT: Product = {
       width: 1221,
       height: 1180,
     },
+    CAMPAIGN_IMAGES.goldenTable,
+    CAMPAIGN_IMAGES.heldPack,
   ],
   // Preview figures only. Replace with approved pack sizes and MRP before taking orders.
   variants: [

@@ -8,6 +8,7 @@ import { SITE } from "@/data/site";
 import { getSiteUrl } from "@/lib/metadata";
 import "./globals.css";
 import "./heritage.css";
+import "./campaign.css";
 
 const publicUrl = getSiteUrl();
 

@@ -3,16 +3,13 @@
 import Image from "next/image";
 import { useCallback, useRef, useState } from "react";
 import { PRODUCT } from "@/data/site";
-import { CloseIcon } from "@/components/icons";
-import { useModalFocus } from "@/components/use-modal-focus";
+import { ImageLightbox } from "@/components/image-lightbox";
 
 export function ProductGallery({ compact = false }: { compact?: boolean }) {
   const [selected, setSelected] = useState(0);
   const [zoomed, setZoomed] = useState(false);
   const touchStartX = useRef<number | null>(null);
-  const zoomRef = useRef<HTMLDivElement>(null);
   const closeZoom = useCallback(() => setZoomed(false), []);
-  useModalFocus(zoomed, zoomRef, closeZoom);
 
   function selectBySwipe(endX: number) {
     if (touchStartX.current === null) return;
@@ -31,13 +28,6 @@ export function ProductGallery({ compact = false }: { compact?: boolean }) {
       {PRODUCT.images.map((image, index) => <button key={image.src} type="button" className={index === selected ? "selected" : ""} onClick={() => setSelected(index)} aria-label={`Show ${image.label} image`} aria-pressed={index === selected}><Image src={image.src} alt="" width={82} height={82} /><span>{image.label}</span></button>)}
     </div>
     <div className="gallery-dots" aria-label="Product image selection">{PRODUCT.images.map((image, index) => <button key={image.src} type="button" className={index === selected ? "selected" : ""} onClick={() => setSelected(index)} aria-label={`Show ${image.label} image`} aria-pressed={index === selected} />)}</div>
-    <div className={`zoom-root${zoomed ? " open" : ""}`} aria-hidden={!zoomed}>
-      <button className="zoom-backdrop" tabIndex={zoomed ? 0 : -1} onClick={closeZoom} aria-label="Close enlarged image" />
-      <div className="zoom-dialog" ref={zoomRef} role={zoomed ? "dialog" : undefined} aria-modal={zoomed ? "true" : undefined} aria-label={`${PRODUCT.images[selected].label} enlarged`} inert={!zoomed}>
-        <button className="icon-button zoom-close" onClick={closeZoom} aria-label="Close enlarged image"><CloseIcon /></button>
-        <Image src={PRODUCT.images[selected].src} alt={PRODUCT.images[selected].alt} width={PRODUCT.images[selected].width} height={PRODUCT.images[selected].height} />
-        <p>{PRODUCT.images[selected].label}</p>
-      </div>
-    </div>
+    <ImageLightbox image={PRODUCT.images[selected]} open={zoomed} onClose={closeZoom} />
   </div>;
 }
