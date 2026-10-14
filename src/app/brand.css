@@ -22,7 +22,7 @@
   height: auto;
 }
 
-.site-header.is-scrolled .brand-mark { --brand-width: 101px; }
+.wordmark .brand-mark { --brand-width: 104px; }
 .mobile-menu-head .brand-mark { --brand-width: 130px; }
 .footer-wordmark .brand-mark { --brand-width: 157px; }
 .branded-product-title .brand-mark { --brand-width: 110px; display: block; margin-bottom: 14px; }
@@ -31,8 +31,7 @@
 .hero-caption-brand .brand-mark { --brand-width: 43px; }
 
 @media (max-width: 900px) {
-  .wordmark .brand-mark { --brand-width: 100px; }
-  .site-header.is-scrolled .brand-mark { --brand-width: 92px; }
+  .wordmark .brand-mark { --brand-width: 92px; }
 }
 
 @media (max-width: 430px) {
