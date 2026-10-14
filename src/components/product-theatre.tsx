@@ -1,5 +1,7 @@
 "use client";
 
+import { SectionHeritage } from "@/components/heritage-ornament";
+
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { PRODUCT } from "@/data/site";
@@ -24,7 +26,7 @@ export function ProductTheatre() {
     return () => observer.disconnect();
   }, []);
 
-  return <section className="theatre-section" aria-labelledby="theatre-heading">
+  return <section className="theatre-section" aria-labelledby="theatre-heading"><SectionHeritage />
     <div className="container theatre-intro" data-reveal><span className="eyebrow">A closer look</span><h2 id="theatre-heading">Made to be <em>savoured.</em></h2><p>Follow the golden moments, from the first glance to the last spoonful.</p></div>
     <div className="container theatre-layout">
       <div className="theatre-visual" aria-hidden="true"><div className="theatre-visual-inner"><span className="theatre-orbit orbit-one" /><span className="theatre-orbit orbit-two" />{scenes.map((scene, index) => <Image key={scene.number} src={scene.image.src} alt="" width={scene.image.width} height={scene.image.height} sizes="50vw" className={`theatre-photo${active === index ? " active" : ""}`} />)}<div className="theatre-visual-bottom"><span>KAPALINI / SHUDH DESI GHEE</span><span>0{active + 1} — 03</span></div></div></div>

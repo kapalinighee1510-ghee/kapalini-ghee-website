@@ -1,0 +1,179 @@
+/* Fine brass linework frames the first brand moment without covering the product. */
+.header-heritage-rule {
+  position: absolute;
+  inset: auto 18px -1px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(170, 112, 42, .68) 7%, rgba(170, 112, 42, .68) 93%, transparent);
+  pointer-events: none;
+}
+
+.header-heritage-rosette {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  padding: 3px;
+  color: #ab702e;
+  background: var(--white);
+  transform: translate(-50%, -50%);
+}
+
+.hero-heritage-frame {
+  position: absolute;
+  inset: 10px 12px;
+  z-index: 3;
+  border: 1px solid rgba(169, 105, 36, .52);
+  color: #b57931;
+  pointer-events: none;
+}
+
+.hero-heritage-frame::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dotted rgba(169, 105, 36, .32);
+}
+
+.heritage-corner {
+  position: absolute;
+  width: 82px;
+  height: 82px;
+}
+
+.heritage-corner-tl { top: -2px; left: -2px; }
+.heritage-corner-tr { top: -2px; right: -2px; transform: scaleX(-1); }
+.heritage-corner-bl { bottom: -2px; left: -2px; transform: scaleY(-1); }
+.heritage-corner-br { bottom: -2px; right: -2px; transform: scale(-1); }
+
+.heritage-rosette {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+  background: var(--ivory);
+}
+
+.heritage-rosette-top { top: -18px; left: 50%; transform: translateX(-50%); }
+.heritage-rosette-bottom { bottom: -18px; left: 50%; transform: translateX(-50%); }
+.heritage-rosette-left { top: 50%; left: -18px; transform: translateY(-50%); }
+.heritage-rosette-right { top: 50%; right: -18px; transform: translateY(-50%); }
+
+.signature-strip {
+  border-top: 3px double rgba(218, 170, 92, .75);
+  border-bottom: 3px double rgba(218, 170, 92, .75);
+}
+
+/* Shared, quiet linework carries the same motif through the full site. */
+.story-section,
+.theatre-section,
+.showcase-section,
+.pack-section,
+.ways-section,
+.moment-section,
+.faq-section,
+.closing-section,
+.page-hero,
+.shop-product,
+.shop-bottom,
+.about-photo-section,
+.about-content,
+.about-quote,
+.product-page-top,
+.product-editorial,
+.contact-image-band,
+.thanks-page,
+.site-footer,
+.section-pad:has(> .section-heritage) {
+  position: relative;
+}
+
+.section-heritage {
+  position: absolute;
+  inset: 11px 13px;
+  z-index: 2;
+  border-top: 1px solid rgba(171, 111, 46, .37);
+  border-bottom: 1px solid rgba(171, 111, 46, .37);
+  color: #a96b30;
+  pointer-events: none;
+}
+
+.section-heritage-light {
+  border-color: rgba(239, 201, 133, .46);
+  color: #e2b677;
+}
+
+.section-heritage-corner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+}
+
+.section-heritage-corner-top {
+  top: -2px;
+  right: -2px;
+  transform: scaleX(-1);
+}
+
+.section-heritage-corner-bottom {
+  bottom: -2px;
+  left: -2px;
+  transform: scaleY(-1);
+}
+
+.section-heritage-rosette {
+  position: absolute;
+  left: 50%;
+  width: 27px;
+  height: 27px;
+  padding: 3px;
+  background: var(--white);
+  transform: translateX(-50%);
+}
+
+.section-heritage-rosette-top { top: -14px; }
+.section-heritage-rosette-bottom { bottom: -14px; }
+.section-heritage-light .section-heritage-rosette { background: var(--maroon); }
+.theatre-section .section-heritage-rosette,
+.about-quote .section-heritage-rosette,
+.product-editorial .section-heritage-rosette { background: #f4ead8; }
+.pack-section .section-heritage-rosette { background: #f7efe1; }
+.page-hero .section-heritage-rosette,
+.about-photo-section .section-heritage-rosette,
+.thanks-page .section-heritage-rosette { background: var(--ivory); }
+.shop-product .section-heritage-rosette,
+.ways-section .section-heritage-rosette,
+.showcase-section .section-heritage-rosette,
+.faq-section .section-heritage-rosette { background: var(--white); }
+
+.site-footer {
+  border-top: 3px double rgba(226, 182, 119, .65);
+}
+
+.site-footer .section-heritage {
+  inset: 9px 13px 11px;
+}
+
+.site-footer .section-heritage-rosette { background: #351c19; }
+
+@media (max-width: 900px) {
+  .hero-heritage-frame { inset: 5px; }
+  .heritage-corner { width: 48px; height: 48px; }
+  .heritage-rosette { width: 27px; height: 27px; padding: 4px; }
+  .heritage-rosette-top { top: -14px; }
+  .heritage-rosette-bottom { bottom: -14px; }
+  .heritage-rosette-left { left: -14px; }
+  .heritage-rosette-right { right: -14px; }
+  .header-heritage-rule { inset-inline: 8px; }
+  .section-heritage { inset: 7px; }
+  .section-heritage-corner { width: 47px; height: 47px; }
+  .section-heritage-rosette { width: 23px; height: 23px; padding: 3px; }
+  .section-heritage-rosette-top { top: -12px; }
+  .section-heritage-rosette-bottom { bottom: -12px; }
+}
+
+@media (max-width: 430px) {
+  .heritage-corner { width: 37px; height: 37px; }
+  .heritage-rosette-left,
+  .heritage-rosette-right { display: none; }
+}

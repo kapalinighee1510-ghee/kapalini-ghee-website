@@ -7,6 +7,7 @@ import { NAVIGATION, SITE } from "@/data/site";
 import { BagIcon, CloseIcon } from "@/components/icons";
 import { useCart } from "@/components/cart-provider";
 import { useModalFocus } from "@/components/use-modal-focus";
+import { HeaderHeritageRule } from "@/components/heritage-ornament";
 
 export function Header() {
   const pathname = usePathname();
@@ -45,6 +46,7 @@ export function Header() {
           </button>
         </div>
       </div>
+      <HeaderHeritageRule />
     </header>
     <div className={`mobile-menu-overlay${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
       <button className="overlay-backdrop" tabIndex={menuOpen ? 0 : -1} aria-label="Close menu" onClick={closeMenu} />

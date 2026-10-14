@@ -7,6 +7,7 @@ import { RevealObserver } from "@/components/reveal-observer";
 import { SITE } from "@/data/site";
 import { getSiteUrl } from "@/lib/metadata";
 import "./globals.css";
+import "./heritage.css";
 
 const publicUrl = getSiteUrl();
 
