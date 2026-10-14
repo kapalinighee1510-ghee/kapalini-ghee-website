@@ -14,15 +14,6 @@
   filter: none;
 }
 
-.hero-art-caption {
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
-  padding: 12px 14px;
-  background: rgba(255, 250, 240, .9);
-  backdrop-filter: blur(8px);
-}
-
 .page-hero-image,
 .shop-card-image {
   overflow: hidden;
@@ -247,7 +238,6 @@
 }
 
 @media (max-width: 900px) {
-  .hero-art-caption { left: 15px; right: 15px; bottom: 15px; }
   .gallery-thumbs { display: none; }
   .campaign-heading { display: block; margin-bottom: 30px; }
   .campaign-heading h2 { font-size: clamp(55px, 11vw, 78px); }

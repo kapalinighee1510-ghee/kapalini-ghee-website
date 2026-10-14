@@ -8,7 +8,6 @@ import { ProductGallery } from "@/components/product-gallery";
 import { ProductTheatre } from "@/components/product-theatre";
 import { PurchasePanel } from "@/components/purchase-panel";
 import { CAMPAIGN_IMAGES, SITE } from "@/data/site";
-import { BrandMark } from "@/components/brand-mark";
 
 export default function HomePage() {
   return <main id="main">
@@ -16,7 +15,7 @@ export default function HomePage() {
       <HeroHeritageFrame />
       <div className="container hero-grid">
         <div className="hero-copy"><div className="hero-eyebrow"><span className="mini-sun" /> A taste of togetherness</div><h1 id="hero-title"><span>A Golden Touch</span><span>of <em>Tradition.</em></span></h1><p className="hero-hindi" lang="hi">हर चम्मच में अपनापन।</p><p className="hero-lede">For the rotis passed around, the dal served warm, and the everyday moments that stay with us.</p><div className="hero-actions"><Link href={SITE.productPath} className="button button-dark">Explore our ghee <ArrowIcon /></Link><Link href="/about" className="underlined-link">Our story <ArrowIcon diagonal /></Link></div><div className="hero-scroll-note"><span className="scroll-line" />Scroll to discover</div></div>
-        <div className="hero-art"><div className="hero-arch" aria-hidden="true" /><span className="hero-corner hero-corner-tl" aria-hidden="true">✦</span><span className="hero-corner hero-corner-br" aria-hidden="true">✦</span><div className="hero-photo-wrap"><CampaignPhoto image={CAMPAIGN_IMAGES.ceremonialTable} priority sizes="(max-width: 800px) 100vw, 52vw" /></div><div className="hero-art-caption"><span className="hero-caption-brand"><BrandMark decorative /> Shudh Desi Ghee</span></div></div>
+        <div className="hero-art"><div className="hero-arch" aria-hidden="true" /><span className="hero-corner hero-corner-tl" aria-hidden="true">✦</span><span className="hero-corner hero-corner-br" aria-hidden="true">✦</span><div className="hero-photo-wrap"><CampaignPhoto image={CAMPAIGN_IMAGES.ceremonialTable} priority sizes="(max-width: 800px) 100vw, 52vw" /></div></div>
       </div>
     </section>
 

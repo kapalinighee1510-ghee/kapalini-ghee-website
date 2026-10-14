@@ -27,8 +27,6 @@
 .footer-wordmark .brand-mark { --brand-width: 157px; }
 .branded-product-title .brand-mark { --brand-width: 110px; display: block; margin-bottom: 14px; }
 .branded-product-title > span:last-child { display: block; }
-.hero-caption-brand { display: inline-flex; align-items: center; gap: 8px; }
-.hero-caption-brand .brand-mark { --brand-width: 43px; }
 
 @media (max-width: 900px) {
   .wordmark .brand-mark { --brand-width: 92px; }
