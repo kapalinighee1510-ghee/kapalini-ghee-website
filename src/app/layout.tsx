@@ -9,6 +9,8 @@ import { getSiteUrl } from "@/lib/metadata";
 import "./globals.css";
 import "./heritage.css";
 import "./campaign.css";
+import "./brand.css";
+import "./motion.css";
 
 const publicUrl = getSiteUrl();
 

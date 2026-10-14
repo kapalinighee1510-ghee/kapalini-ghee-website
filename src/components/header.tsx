@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { NAVIGATION, SITE } from "@/data/site";
+import { NAVIGATION } from "@/data/site";
 import { BagIcon, CloseIcon } from "@/components/icons";
 import { useCart } from "@/components/cart-provider";
 import { useModalFocus } from "@/components/use-modal-focus";
 import { HeaderHeritageRule } from "@/components/heritage-ornament";
+import { BrandMark } from "@/components/brand-mark";
 
 export function Header() {
   const pathname = usePathname();
@@ -28,11 +29,11 @@ export function Header() {
   useEffect(() => setMenuOpen(false), [pathname]);
 
   return <>
-    <div className="announcement">Kapalini <span aria-hidden="true">✦</span> Har chammach mein apnapan</div>
+    <div className="announcement">A taste of togetherness <span aria-hidden="true">✦</span> Har chammach mein apnapan</div>
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner container">
         <Link href="/" className="wordmark" aria-label="Kapalini home">
-          <span className="wordmark-main">Kapalini</span><span className="wordmark-sub">कपालिनी</span>
+          <BrandMark decorative priority />
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {NAVIGATION.map((item) => <Link key={item.href} href={item.href} className={pathname === item.href || (item.href === "/shop" && pathname.startsWith("/product")) ? "active" : ""}>{item.label}</Link>)}
@@ -51,7 +52,7 @@ export function Header() {
     <div className={`mobile-menu-overlay${menuOpen ? " open" : ""}`} aria-hidden={!menuOpen}>
       <button className="overlay-backdrop" tabIndex={menuOpen ? 0 : -1} aria-label="Close menu" onClick={closeMenu} />
       <nav id="mobile-menu" ref={menuRef} className="mobile-menu" aria-label="Mobile navigation" aria-modal={menuOpen ? "true" : undefined} role={menuOpen ? "dialog" : undefined} inert={!menuOpen}>
-        <div className="mobile-menu-head"><span className="wordmark-main">{SITE.name}</span><button className="icon-button" onClick={closeMenu} aria-label="Close menu"><CloseIcon /></button></div>
+        <div className="mobile-menu-head"><BrandMark /><button className="icon-button" onClick={closeMenu} aria-label="Close menu"><CloseIcon /></button></div>
         <div className="mobile-menu-links">{NAVIGATION.map((item, index) => <Link key={item.href} href={item.href} onClick={closeMenu}><span>0{index + 1}</span>{item.label}</Link>)}</div>
         <p>Everyday meals, a little more golden.</p>
       </nav>

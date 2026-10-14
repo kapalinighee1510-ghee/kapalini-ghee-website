@@ -42,7 +42,7 @@ export function CampaignCarousel() {
       >
         <div className="campaign-track" style={{ transform: `translateX(-${active * 100}%)` }}>
           {slides.map((slide, index) => (
-            <div className="campaign-slide" key={slide.image.src} aria-hidden={index !== active} inert={index !== active}>
+            <div className={`campaign-slide${index === active ? " is-active" : ""}`} key={slide.image.src} aria-hidden={index !== active} inert={index !== active}>
               <button
                 className="campaign-slide-media"
                 type="button"

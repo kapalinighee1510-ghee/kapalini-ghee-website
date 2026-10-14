@@ -1,0 +1,40 @@
+/* Crop the supplied packaging image in CSS to preserve the exact cow and lettering. */
+.brand-mark {
+  --brand-width: 118px;
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: var(--brand-width);
+  aspect-ratio: 291 / 176;
+  overflow: hidden;
+  border-radius: 50%;
+  vertical-align: middle;
+  background: #c60016;
+}
+
+.brand-mark-source {
+  position: absolute;
+  top: -25%;
+  left: -13.4%;
+  display: block;
+  width: 136.1%;
+  max-width: none;
+  height: auto;
+}
+
+.site-header.is-scrolled .brand-mark { --brand-width: 101px; }
+.mobile-menu-head .brand-mark { --brand-width: 130px; }
+.footer-wordmark .brand-mark { --brand-width: 157px; }
+.branded-product-title .brand-mark { --brand-width: 110px; display: block; margin-bottom: 14px; }
+.branded-product-title > span:last-child { display: block; }
+.hero-caption-brand { display: inline-flex; align-items: center; gap: 8px; }
+.hero-caption-brand .brand-mark { --brand-width: 43px; }
+
+@media (max-width: 900px) {
+  .wordmark .brand-mark { --brand-width: 100px; }
+  .site-header.is-scrolled .brand-mark { --brand-width: 92px; }
+}
+
+@media (max-width: 430px) {
+  .announcement { gap: 6px; font-size: 8px; letter-spacing: .1em; }
+}
